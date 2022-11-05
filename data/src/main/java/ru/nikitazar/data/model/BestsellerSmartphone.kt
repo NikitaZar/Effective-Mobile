@@ -10,7 +10,7 @@ data class BestsellerSmartphone(
     val discountPrice: Int?,
     val picture: String,
 ) {
-    fun toDomain() =
+    fun mapToDomain() =
         BestsellerSmartphone(
             id = id,
             isFavorites = isFavorites,

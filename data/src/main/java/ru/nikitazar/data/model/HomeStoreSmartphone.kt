@@ -10,7 +10,7 @@ data class HomeStoreSmartphone(
     val picture: String,
     val isBuy: Boolean,
 ) {
-    fun toDomain() =
+    fun mapToDomain() =
         HomeStoreSmartphone(
             id = id,
             isNew = isNew,
