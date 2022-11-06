@@ -1,9 +1,13 @@
 package ru.nikitazar.domain.repository
 
+import kotlinx.coroutines.flow.Flow
 import ru.nikitazar.domain.model.BestsellerSmartphone
 import ru.nikitazar.domain.model.HomeStoreSmartphone
 
 interface PhoneRepository {
-    suspend fun getHomeStore(): List<HomeStoreSmartphone>
-    suspend fun getBestSeller(): List<BestsellerSmartphone>
+   val dataHomeStore: Flow<List<HomeStoreSmartphone>>
+   val dataBestSeller: Flow<List<BestsellerSmartphone>>
+
+    suspend fun getHomeStore()
+    suspend fun getBestSeller()
 }

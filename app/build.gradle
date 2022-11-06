@@ -1,19 +1,22 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.nikitazar.effectivemobile"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'BASE_URL', '"https://run.mocky.io/v3/"'
     }
 
     buildTypes {
@@ -33,15 +36,15 @@ android {
 
 dependencies {
 
-    def kt_version = "1.7.0"
     def appcompat_version = "1.5.1"
     def material_version = "1.7.0"
     def constraint_version = "2.1.4"
     def koin_version = "3.2.2"
     def retrofitVersion = '2.9.0'
     def okhttp_version = "5.0.0-alpha.2"
+    def room_version = "2.4.2"
 
-    implementation "androidx.core:core-ktx:$kt_version"
+    implementation "androidx.core:core-ktx:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
@@ -56,6 +59,10 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //Db
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     //Tests
     testImplementation 'junit:junit:4.13.2'
