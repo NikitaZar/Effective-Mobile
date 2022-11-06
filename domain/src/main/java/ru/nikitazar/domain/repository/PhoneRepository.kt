@@ -8,6 +8,5 @@ interface PhoneRepository {
    val dataHomeStore: Flow<List<HomeStoreSmartphone>>
    val dataBestSeller: Flow<List<BestsellerSmartphone>>
 
-    suspend fun getHomeStore()
-    suspend fun getBestSeller()
+    suspend fun getList()
 }

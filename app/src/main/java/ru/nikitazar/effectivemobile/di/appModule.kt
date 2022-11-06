@@ -15,7 +15,12 @@ import ru.nikitazar.effectivemobile.BuildConfig
 import ru.nikitazar.effectivemobile.viewModel.MainViewModel
 
 val appModule = module {
-    viewModel { MainViewModel() }
+    viewModel {
+        MainViewModel(
+            getBestsellerListUseCase = get(),
+            getHomeStoreUseCase = get()
+        )
+    }
     single { provideOkHttpClient() }
     single { provideRetrofit(get()) }
     single { provideApiService(get()) }

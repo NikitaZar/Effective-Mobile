@@ -6,8 +6,6 @@ import ru.nikitazar.data.api.ApiHelper
 import ru.nikitazar.data.db.SmartphoneDao
 import ru.nikitazar.data.db.entity.*
 import ru.nikitazar.data.error.*
-import ru.nikitazar.domain.model.BestsellerSmartphone
-import ru.nikitazar.domain.model.HomeStoreSmartphone
 import ru.nikitazar.domain.repository.PhoneRepository
 import java.io.IOException
 import java.sql.SQLException
@@ -27,29 +25,13 @@ class PhoneRepositoryImpl(
             .map(List<HomeStoreSmartphoneEntity>::toDto)
             .flowOn(Dispatchers.Default)
 
-    override suspend fun getHomeStore() {
+    override suspend fun getList() {
         try {
-            val response = api.getListOfLists()
-            val body = response.body()?.homeStore
+            val response = api.getList()
+            val body = response.body()
                 ?: throw ApiError(response.code(), response.message())
-            dao.insertHomeStoreSmartphones(body.toEntity())
-        } catch (e: ApiError) {
-            throw e
-        } catch (e: IOException) {
-            throw NetworkError
-        } catch (e: SQLException) {
-            throw DbError
-        } catch (e: Exception) {
-            throw UnknownError
-        }
-    }
-
-    override suspend fun getBestSeller() {
-        try {
-            val response = api.getListOfLists()
-            val body = response.body()?.bestseller
-                ?: throw ApiError(response.code(), response.message())
-            dao.insertBestsellerSmartphones(body.toEntity())
+            dao.insertBestsellerSmartphones(body.bestseller.toEntity())
+            dao.insertHomeStoreSmartphones(body.homeStore.toEntity())
         } catch (e: ApiError) {
             throw e
         } catch (e: IOException) {
