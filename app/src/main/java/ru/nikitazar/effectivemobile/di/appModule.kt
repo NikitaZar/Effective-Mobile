@@ -1,5 +1,6 @@
 package ru.nikitazar.effectivemobile.di
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import okhttp3.OkHttpClient
@@ -7,6 +8,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.nikitazar.data.api.ApiHelper
 import ru.nikitazar.data.api.ApiHelperImpl
 import ru.nikitazar.data.api.ApiService
 import ru.nikitazar.data.db.AppDb
@@ -18,13 +20,13 @@ val appModule = module {
     viewModel {
         MainViewModel(
             getBestsellerListUseCase = get(),
-            getHomeStoreUseCase = get()
+            getHomeStoreUseCase = get(),
+            getList = get(),
         )
     }
     single { provideOkHttpClient() }
     single { provideRetrofit(get()) }
     single { provideApiService(get()) }
-    single { provideApiHelper(get()) }
     single { provideDb(get()) }
     single { provideSmartphoneDao(get()) }
 }
@@ -39,10 +41,10 @@ private fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
 
 private fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
 
-private fun provideApiHelper(apiHelper: ApiHelperImpl) = apiHelper
+//private fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper = apiHelper
 
-private fun provideDb(context: Context): AppDb =
-    Room.databaseBuilder(context, AppDb::class.java, "app.db")
+private fun provideDb(application: Application): AppDb =
+    Room.databaseBuilder(application, AppDb::class.java, "app.db")
         .fallbackToDestructiveMigration()
         .build()
 

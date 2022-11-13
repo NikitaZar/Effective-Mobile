@@ -8,7 +8,7 @@ import ru.nikitazar.domain.model.HomeStoreSmartphone
 data class HomeStoreSmartphoneEntity(
     @PrimaryKey
     val id: Int,
-    val isNew: Boolean?,
+    val isNew: Boolean = false,
     val title: String,
     val subtitle: String,
     val picture: String,

@@ -4,18 +4,27 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.launch
 import ru.nikitazar.domain.model.BestsellerSmartphone
 import ru.nikitazar.domain.model.HomeStoreSmartphone
 import ru.nikitazar.domain.usecase.GetBestsellerListUseCase
 import ru.nikitazar.domain.usecase.GetHomeStoreUseCase
+import ru.nikitazar.domain.usecase.GetList
 
 class MainViewModel(
     private val getBestsellerListUseCase: GetBestsellerListUseCase,
-    private val getHomeStoreUseCase: GetHomeStoreUseCase
+    private val getHomeStoreUseCase: GetHomeStoreUseCase,
+    getList: GetList,
 ) : ViewModel() {
 
+    init {
+        viewModelScope.launch {
+            getList.execute()
+        }
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class)
-    val dataBestSeller: LiveData<List<BestsellerSmartphone>>
+    val dataBestseller: LiveData<List<BestsellerSmartphone>>
         get() = _dataBestSeller
             .asFlow()
             .flatMapLatest { getBestsellerListUseCase.execute() }

@@ -1,10 +1,19 @@
 package ru.nikitazar.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 data class HomeStoreSmartphone(
-    val id: Int,
-    val isNew: Boolean?,
-    val title: String,
-    val subtitle: String,
-    val picture: String,
-    val isBuy: Boolean,
+
+    @SerializedName("id")
+    val id: Int = 0,
+    @SerializedName("is_new")
+    val isNew: Boolean = false,
+    @SerializedName("title")
+    val title: String = "NoName",
+    @SerializedName("subtitle")
+    val subtitle: String = "",
+    @SerializedName("picture")
+    val picture: String = "",
+    @SerializedName("is_buy")
+    val isBuy: Boolean = false,
 )

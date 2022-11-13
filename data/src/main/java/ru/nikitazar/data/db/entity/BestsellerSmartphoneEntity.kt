@@ -8,10 +8,10 @@ import ru.nikitazar.domain.model.BestsellerSmartphone
 data class BestsellerSmartphoneEntity(
     @PrimaryKey
     val id: Int,
-    val isFavorites: Boolean?,
+    val isFavorites: Boolean = false,
     val title: String,
-    val priceWithoutDiscount: Int?,
-    val discountPrice: Int?,
+    val priceWithoutDiscount: Int = 0,
+    val discountPrice: Int = 0,
     val picture: String,
 ) {
     fun toDto() =

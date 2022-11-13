@@ -10,7 +10,8 @@ import ru.nikitazar.data.db.entity.HomeStoreSmartphoneEntity
         BestsellerSmartphoneEntity::class,
         HomeStoreSmartphoneEntity::class
     ],
-    version = 1)
+    version = 2
+)
 abstract class AppDb : RoomDatabase() {
     abstract fun smartphoneDao(): SmartphoneDao
 }

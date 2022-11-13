@@ -1,10 +1,18 @@
 package ru.nikitazar.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 data class BestsellerSmartphone(
-    val id: Int,
-    val isFavorites: Boolean?,
-    val title: String,
-    val priceWithoutDiscount: Int?,
-    val discountPrice: Int?,
-    val picture: String,
+    @SerializedName("id")
+    val id: Int = 0,
+    @SerializedName("is_favorites")
+    val isFavorites: Boolean = false,
+    @SerializedName("title")
+    val title: String = "NoName",
+    @SerializedName("price_without_discount")
+    val priceWithoutDiscount: Int = 0,
+    @SerializedName("discount_price")
+    val discountPrice: Int = 0,
+    @SerializedName("picture")
+    val picture: String = "",
 )

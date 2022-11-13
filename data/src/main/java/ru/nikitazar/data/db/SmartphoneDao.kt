@@ -20,8 +20,8 @@ interface SmartphoneDao {
     fun getHomeStoreSmartphones(): Flow<List<HomeStoreSmartphoneEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertBestsellerSmartphones(smartphones: List<BestsellerSmartphoneEntity>): Long
+    suspend fun insertBestsellerSmartphones(smartphones: List<BestsellerSmartphoneEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertHomeStoreSmartphones(smartphones: List<HomeStoreSmartphoneEntity>): Long
+    suspend fun insertHomeStoreSmartphones(smartphones: List<HomeStoreSmartphoneEntity>)
 }
