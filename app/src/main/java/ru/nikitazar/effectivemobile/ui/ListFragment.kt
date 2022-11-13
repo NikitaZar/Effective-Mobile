@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.nikitazar.effectivemobile.databinding.FragmentListBinding
-import ru.nikitazar.effectivemobile.ui.adapter.BestsellerListAdapter
+import ru.nikitazar.effectivemobile.ui.adapter.BestsellerAdapter
 import ru.nikitazar.effectivemobile.ui.adapter.OnInteractionListener
 import ru.nikitazar.effectivemobile.viewModel.MainViewModel
 
@@ -23,7 +23,7 @@ class ListFragment : Fragment() {
     ): View {
         val binding = FragmentListBinding.inflate(inflater, container, false)
 
-        val adapter = BestsellerListAdapter(requireContext(), object : OnInteractionListener {})
+        val adapter = BestsellerAdapter(object : OnInteractionListener {})
 
         binding.bestsellerList.adapter = adapter
 
