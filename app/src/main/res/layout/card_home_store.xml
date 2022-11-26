@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/card_home_store_height"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="@dimen/space3x">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/common_spacing">
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="end"
+            app:barrierMargin="@dimen/common_spacing"
+            app:constraint_referenced_ids="bt_buy" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@sample/mobile.jpg" />
+
+        <TextView
+            android:id="@+id/ic_new"
+            android:layout_width="@dimen/ic_new_size"
+            android:layout_height="@dimen/ic_new_size"
+            android:background="@drawable/background_new_icon"
+            android:gravity="center"
+            android:text="@string/text_new"
+            android:textColor="@color/white"
+            android:textSize="@dimen/card_home_store_new_ic_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:paddingTop="18dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/card_home_store_title_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_new"
+            tools:text="IPhone 12" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/card_home_store_subtitle_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            tools:text="Súper. Mega. Rápido." />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_buy"
+            android:layout_width="@dimen/bt_buy_now_width"
+            android:layout_height="@dimen/bt_buy_now_height"
+            android:layout_marginTop="26dp"
+            android:background="@color/white"
+            android:text="@string/buy_now"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
