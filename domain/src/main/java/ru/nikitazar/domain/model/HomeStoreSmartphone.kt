@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class HomeStoreSmartphone(
 
     @SerializedName("id")
-    val id: Int = 0,
+    override val id: Int = 0,
     @SerializedName("is_new")
     val isNew: Boolean = false,
     @SerializedName("title")
@@ -16,4 +16,4 @@ data class HomeStoreSmartphone(
     val picture: String = "",
     @SerializedName("is_buy")
     val isBuy: Boolean = false,
-)
+) : FeedItem

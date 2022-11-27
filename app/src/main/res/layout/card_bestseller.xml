@@ -1,16 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="160dp"
+    android:layout_height="227dp"
     android:gravity="clip_vertical"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/space3x">
 
-    <TextView
-        android:id="@+id/title"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        tools:text="Мобильник" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="168dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@sample/mobile_2.jpg" />
+
+        <ImageButton
+            android:id="@+id/bt_favorite"
+            android:layout_width="@dimen/icon_button_min_size"
+            android:layout_height="@dimen/icon_button_min_size"
+            android:layout_margin="11dp"
+            android:background="@drawable/background_favorite_icon"
+            android:checkable="true"
+            android:elevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:barrierMargin="@dimen/space0.5x"
+            app:constraint_referenced_ids="image" />
+
+        <TextView
+            android:id="@+id/discount_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:gravity="center"
+            android:textColor="@color/dark_blue"
+            android:textSize="@dimen/text_16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier"
+            tools:text="$1,047" />
+
+        <TextView
+            android:id="@+id/price_without_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:gravity="center"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintBottom_toBottomOf="@id/discount_price"
+            app:layout_constraintStart_toEndOf="@id/discount_price"
+            app:layout_constraintTop_toBottomOf="@id/barrier"
+            tools:text="$1,500" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:gravity="center"
+            android:textColor="@color/dark_blue"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintStart_toStartOf="@id/discount_price"
+            app:layout_constraintTop_toBottomOf="@id/discount_price"
+            tools:text="Samsung Galaxy S20 Ultra" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/background_favorite_icon.xml" value="0.1" />
         <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/background_new_icon.xml" value="0.141" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/ic_favorite_border_outlined.xml" value="0.1" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/ic_favorite_empty.xml" value="0.1" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/ic_favorite_filled.xml" value="0.1" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/drawable/text_new.xml" value="0.141" />
         <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/activity_app.xml" value="0.1" />
         <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_bestseller.xml" value="0.45472061657032753" />
-        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_home_store.xml" value="0.8905660377358491" />
-        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/fragment_list.xml" value="0.203125" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_bestseller.xml" value="0.5619047619047619" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_bestseller_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_home_store.xml" value="0.43703703703703706" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/card_home_store_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android_proj/Effective Mobile/app/src/main/res/layout/fragment_list.xml" value="0.33" />
       </map>
     </option>
   </component>

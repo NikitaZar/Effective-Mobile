@@ -2,6 +2,7 @@ package ru.nikitazar.effectivemobile.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,9 @@ class HomeStoreViewHolder(
             title.text = phone.title
             subtitle.text = phone.subtitle
             image.load(phone.picture)
+            icNew.isVisible = phone.isNew
+
+            btBuy.transformationMethod = null
         }
     }
 }

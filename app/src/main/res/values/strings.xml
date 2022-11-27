@@ -2,4 +2,7 @@
     <string name="app_name">Effective Mobile</string>
     <string name="buy_now">Buy now!</string>
     <string name="text_new">New</string>
+    <string name="text_select_category">Select Category</string>
+    <string name="text_view_all">view all</string>
+    <string name="text_phones">Phones</string>
 </resources>
