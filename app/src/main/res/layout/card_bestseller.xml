@@ -25,7 +25,7 @@
             android:id="@+id/bt_favorite"
             android:layout_width="@dimen/icon_button_min_size"
             android:layout_height="@dimen/icon_button_min_size"
-            android:layout_margin="11dp"
+            android:layout_margin="@dimen/icon_margin"
             android:background="@drawable/background_favorite_icon"
             android:checkable="true"
             android:elevation="8dp"

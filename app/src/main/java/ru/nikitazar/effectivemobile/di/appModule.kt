@@ -22,6 +22,7 @@ val appModule = module {
             getBestsellerListUseCase = get(),
             getHomeStoreUseCase = get(),
             getList = get(),
+            application = get()
         )
     }
     single { provideOkHttpClient() }

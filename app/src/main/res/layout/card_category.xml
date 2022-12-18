@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/space3x"
+    android:layout_marginEnd="@dimen/space3x"
+    android:gravity="clip_vertical"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:id="@+id/layout_bt_phones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="@dimen/category_button_min_size"
+            android:layout_height="@dimen/category_button_min_size">
+
+            <ImageButton
+                android:id="@+id/icon_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_new_icon"
+                android:checkable="true" />
+
+            <ImageButton
+                android:id="@+id/icon"
+                android:layout_width="@dimen/category_button_icon_size"
+                android:layout_height="@dimen/category_button_icon_size"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                tools:background="@drawable/ic_iphone_24" />
+        </FrameLayout>
+
+        <CheckedTextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space2x"
+            android:checkable="true"
+            android:fontFamily="@font/mark_pro_bold"
+            android:gravity="center"
+            android:text="@string/text_phones"
+            android:textColor="@color/main_orange"
+            android:textSize="@dimen/text_12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/barrier" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

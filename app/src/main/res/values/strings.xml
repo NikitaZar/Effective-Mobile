@@ -3,6 +3,15 @@
     <string name="buy_now">Buy now!</string>
     <string name="text_new">New</string>
     <string name="text_select_category">Select Category</string>
+    <string name="text_hot_sales">Hot sales</string>
     <string name="text_view_all">view all</string>
+    <string name="text_search">Search</string>
+    <string name="text_see_all">see all</string>
     <string name="text_phones">Phones</string>
+
+    //Categories
+    <string name="text_category_phones">Phones</string>
+    <string name="text_category_computer">Computer</string>
+    <string name="text_category_health">Health</string>
+    <string name="text_category_books">Books</string>
 </resources>
