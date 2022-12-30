@@ -1,129 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_gray"
-    android:padding="@dimen/space4x"
     tools:context=".ui.ListFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <TextView
-            android:id="@+id/text_select_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_spacing"
-            android:fontFamily="@font/mark_pro_bold"
-            android:gravity="center"
-            android:text="@string/text_select_category"
-            android:textColor="@color/dark_blue"
-            android:textSize="@dimen/text_25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/bt_view_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_spacing"
-            android:fontFamily="@font/mark_pro_bold"
-            android:gravity="center"
-            android:text="@string/text_view_all"
-            android:textColor="@color/main_orange"
-            android:textSize="@dimen/text_15sp"
-            app:layout_constraintBottom_toBottomOf="@id/text_select_category"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_select_category" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/categories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space6x"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_select_category"
-            tools:listitem="@layout/card_category" />
-
-        <LinearLayout
-            android:id="@+id/search_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space4x"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/categories">
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_view"
-                android:layout_width="@dimen/search_width"
-                android:layout_height="@dimen/search_height"
-                android:background="@drawable/background_search_view"
-                android:textColor="@color/light_gray"
-                app:iconifiedByDefault="false"
-                app:queryBackground="@android:color/transparent"
-                app:queryHint="@string/text_search" />
-
-            <ImageView
-                android:id="@+id/bt_qr_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/space3x"
-                android:background="@drawable/background_search_icon" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_hot_sales"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_spacing"
-            android:layout_marginTop="@dimen/space6x"
-            android:fontFamily="@font/mark_pro_bold"
-            android:gravity="center"
-            android:text="@string/text_hot_sales"
-            android:textColor="@color/dark_blue"
-            android:textSize="@dimen/text_25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_layout" />
-
-        <TextView
-            android:id="@+id/bt_see_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_spacing"
-            android:fontFamily="@font/mark_pro_bold"
-            android:gravity="center"
-            android:text="@string/text_see_all"
-            android:textColor="@color/main_orange"
-            android:textSize="@dimen/text_15sp"
-            app:layout_constraintBottom_toBottomOf="@id/text_hot_sales"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_hot_sales" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_store_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_hot_sales"
-            tools:listitem="@layout/card_home_store" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bestseller_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_store_list"
-            tools:listitem="@layout/card_bestseller" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</LinearLayout>

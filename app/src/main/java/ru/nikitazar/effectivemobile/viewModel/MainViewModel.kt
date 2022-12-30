@@ -63,14 +63,19 @@ class MainViewModel(
         ),
         Category(
             id = 2,
+            icon = R.drawable.ic_tablet_24,
+            text = application.getString(R.string.text_category_tablets)
+        ),
+        Category(
+            id = 3,
             icon = R.drawable.ic_health_24,
             text = application.getString(R.string.text_category_health)
         ),
         Category(
-            id = 3,
+            id = 4,
             icon = R.drawable.ic_book_24,
             text = application.getString(R.string.text_category_books)
-        ),
+        )
     )
 
     private var _dataCategory = MutableLiveData(list)
