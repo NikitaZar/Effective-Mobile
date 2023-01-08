@@ -10,10 +10,18 @@
     <string name="text_phones">Phones</string>
     <string name="text_splash_screen">Ecommerce\nConcept</string>
 
-    //Categories
+<!--    Categories-->
     <string name="text_category_phones">Phones</string>
     <string name="text_category_computer">Computer</string>
     <string name="text_category_health">Health</string>
     <string name="text_category_books">Books</string>
     <string name="text_category_tablets">Tablets</string>
+
+<!--    Filter-->
+    <string name="text_filter_option">Filter option</string>
+    <string name="text_brand">Brand</string>
+    <string name="text_price">Price</string>
+    <string name="text_size">Size</string>
+    <string name="text_done">Done</string>
+
 </resources>

@@ -5,9 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.nikitazar.effectivemobile.databinding.CardHeaderBinding
 
+interface OnHeaderInteractionListener {
+    fun onFilter()
+}
 
 class HeaderAdapter(
-    private val adapterCategory: CategoryAdapter
+    private val adapterCategory: CategoryAdapter,
+    private val onHeaderInteractionListener: OnHeaderInteractionListener
 ) : RecyclerView.Adapter<HeaderAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: CardHeaderBinding) :
@@ -19,12 +23,18 @@ class HeaderAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.categories.adapter = adapterCategory
+        holder.binding.apply {
+            categories.adapter = adapterCategory
+
+            btFilter.setOnClickListener {
+                onHeaderInteractionListener.onFilter()
+            }
+        }
     }
 
     override fun getItemCount() = 1

@@ -9,5 +9,14 @@
         android:id="@+id/listFragment"
         android:name="ru.nikitazar.effectivemobile.ui.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/filterFragment"
+        android:name="ru.nikitazar.effectivemobile.ui.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
 </navigation>

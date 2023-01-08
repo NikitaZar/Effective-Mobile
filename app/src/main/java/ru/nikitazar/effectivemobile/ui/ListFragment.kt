@@ -5,15 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.nikitazar.effectivemobile.R
 import ru.nikitazar.effectivemobile.databinding.FragmentListBinding
 import ru.nikitazar.effectivemobile.ui.adapter.*
 import ru.nikitazar.effectivemobile.ui.utils.SpacingItemDecorator
 import ru.nikitazar.effectivemobile.viewModel.MainViewModel
 
-
-private const val ITEM_SPACING = 20
 
 class ListFragment : Fragment() {
 
@@ -26,7 +26,13 @@ class ListFragment : Fragment() {
     })
     private val adapterBestseller = BestsellerAdapter(object : OnInteractionListener {})
     private val adapterHomeStore = HomeStoreAdapter()
-    private val headerAdapter = HeaderAdapter(adapterCategory)
+    private val headerAdapter = HeaderAdapter(
+        adapterCategory,
+        object : OnHeaderInteractionListener {
+        override fun onFilter() {
+            findNavController().navigate(R.id.action_listFragment_to_filterFragment)
+        }
+    })
     private val adapterListBestseller = BestsellerListAdapter(adapterBestseller)
     private val adapterListHomeStore = HomeStoreListAdapter(adapterHomeStore)
     private val concatAdapter = ConcatAdapter(
